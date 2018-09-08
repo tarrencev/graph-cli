@@ -199,7 +199,7 @@ declare class Value {
   static fromU256(n: U256): Value
   static fromString(s: string): Value
   static fromNull(): Value
-  static fromArray<T>(array: Array<T>): Value
+  static fromArray(array: Array<Value>): Value
 }
 
 /**
@@ -215,7 +215,7 @@ declare class Entity extends TypedMap<string, Value> {
   getBytes(key: string): Bytes
   getU32(key: string): u32
   getString(key: string): string
-  getArray<T>(key: string): Array<T>
+  getArray(key: string): Array<Value>
 
   setAddress(key: string, value: Address): void
   setBoolean(key: string, value: boolean): void
